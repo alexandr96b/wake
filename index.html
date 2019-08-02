@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Вейкпарк. Обучение. Кольцевая и реверсивная лебедки</title>
+    <meta property="og:title" content="" /> 
+    <meta property="og:description" content="" />
+    <meta name="title" content="" /> 
+    <meta name="description" content="" /> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="css/jquery.fancybox.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="webfonts/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link href=favicon.ico” rel=”shortcut icon” type=”image/x-icon”>
+	<link rel="shortcut icon" href="#">
+	<link rel="shortcut icon" href="favicon.png" type="image/png" />	
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<!-- modal-callback -->
+<div class="modal b-modal fade" id="modal-callback" tabindex="-1" role="dialog" aria-labelledby="modal-callback" aria-hidden="true">
+  <div class="modal-dialog">
+		<button data-dismiss="modal" class="modal-close"></button>
+		<div class="b-modal-content">
+			<div class="b-modal-img">
+				<img src="images/b-modal-img.png" alt="">
+			</div>
+			<div class="b-modal-form">
+				<div class="b-form-left">
+					<div class="b-form-top">
+						<b>Оставьте заявку</b>
+						<p>Заполните простую форму заявки и наш менеджер<br/>
+						свяжется с вами в течение 15 минут.</p>
+					</div>
+					<div class="b-form-wrap">
+						<form action="">
+							<input class="b-form-input" type="text" placeholder="Как к вам обращаться?">
+							<input class="b-form-input b-input-tel" type="text" placeholder="Контактный телефон">
+							<div class="b-form-wrap__block">
+								<input class="b-form-btn btn-red" type="submit" value="отправить">
+								<div class="b-checkbox">
+									<input type="checkbox" checked id="n2" name="n4" />
+									<label for="n2"><span></span><i>Нажимая на кнопку вы<br/> соглашаетесь с <a target="_blank" href="https://docs.google.com/document/d/1Tk1Thipu3z5RqG5_32_E7xqa_3921Pa1TjlYQsYumtU/edit?usp=sharing">политикой<br/> кофиденциальности</a></i></label>  
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+  </div>
+
+
+
+<div class="b-container">
+	<!-- begin b-header -->
+	<header class="b-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-header-content">
+						<a class="b-logo">
+							<p>#doaflip</p>
+							<span>wake park</span>
+						</a>
+						<div class="b-header-right">
+							<a class="b-logo">
+								<p>#doaflip</p>
+								<span>wake park</span>
+							</a>							
+							<div class="b-nav">
+								<ul>
+									<li><a href="#training">Обучение</a></li>
+									<li><a href="#price">Цены</a></li>
+									<li><a href="#skating">Абонементы</a></li>
+									<li><a href="#school">Детская школа</a></li>
+									<li><a href="#services">Услуги</a></li>
+									<li><a href="#faq">FAQ</a></li>
+									<li><a href="#contacts">Схема проезда</a></li>
+								</ul>
+							</div>
+							<div class="b-header-contacts">
+								<a class="b-header-phone" href="">8 985 488 89 69</a>
+								<div class="b-social">
+									<ul>
+										<li><a target="_blank" href="https://vk.com/doaflipwakepark"><img src="images/vk.svg" alt=""></a></li>
+										<li><a target="_blank" href="https://www.facebook.com/doaflipwakepark/"><img src="images/facebook-logo.svg" alt=""></a></li>
+										<li><a target="_blank" href="https://www.instagram.com/doaflip_wakepark/"><img src="images/inst.svg" alt=""></a></li>
+										<!-- <li><a href=""><img src="images/yt.svg" alt=""></a></li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="b-mobile">
+						    <div class="menu-icon">
+						        <div class="menu-icon__wrapper">
+						            <span class="b-menu__icon">
+						                <i class="b-menu__line b-menu__line_1"></i>
+						                <i class="b-menu__line b-menu__line_2"></i>
+						                <i class="b-menu__line b-menu__line_3"></i>
+						            </span>
+						        </div>
+						    </div> 
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- end b-header -->
+
+	<section class="b-main">
+		<div class="b-main-item" style="background: url(images/main-img.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl">
+						<div class="b-main-item__content">
+							<span>wake park</span>
+							<h1>вейкпарк. обучение.<br/>
+							кольцевая и реверсивная лебедки.</h1>
+							<div class="b-main-btns">
+								<button class="btn-red btn-req" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+								<a href="#price" class="btn-trans btn-price">цены на катание</a>
+							</div>
+							<div class="b-main-item__bottom">
+								<div class="b-main-item__img"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="b-training" id="training">
+		<div class="b-training-text">
+			<p>Do a flip</p>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-training-top">
+						<div class="b-training-top__left">
+							<h2>обучение</h2>
+						</div>
+						<p>Обучение проходит на риверсивной лебедке.<br/>
+						<span>На первом занятии вы научитесь</span> уверенно вставать из воды<br/> и ездить без остановки. Дальше больше!</p>
+					</div>
+					<div class="b-training-item">
+						<div class="b-training-item__desc">
+							<div class="b-training-item__desc__top"></div>
+							<div class="b-training-item__desc__time">
+								<b>10</b>
+								<span>минут</span>
+							</div>
+							<div class="b-training-item__desc__bottom">
+								<span>1000 рублей</span>
+								<div class="b-training-item__desc__bottom__img">
+									<img src="images/money.png" alt="">
+								</div>
+							</div>
+						</div>
+						<img src="images/b-training-ite.jpg" alt="">
+						<p>*В цену входит прокат оборудования и инструктаж.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="b-price" id="price">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-price-content">
+						<div class="b-price-top">
+							<h2>цены на катание</h2>
+						</div>
+						<div class="b-price-tabs">
+							<div class="b-price-nav">
+								<ul class="nav">
+									<li><a class="active" href="#tab1" data-toggle="tab">кольцевая лебедка</a></li>
+									<li><a href="#tab2" data-toggle="tab">риверсивная лебедка</a></li>
+									<li><a href="#tab3" data-toggle="tab">прокат</a></li>
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane active" id="tab1">
+									<div class="b-price-table">
+										<table>
+											<thead>
+												<tr>
+													<td><i class="b-time-ico"></i>продолжительность</td>
+													<td>будни</td>
+													<td>выходные</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>30 минут</td>
+													<td>750 р</td>
+													<td>950 р</td>
+												</tr>
+												<tr>
+													<td>1 час</td>
+													<td>1000 р</td>
+													<td>1200 р</td>
+												</tr>
+												<tr>
+													<td>2 часа</td>
+													<td>1700 р</td>
+													<td>2250 р</td>
+												</tr>
+												<tr>
+													<td>целый день</td>
+													<td>2200 р</td>
+													<td>2250 р</td>
+												</tr>
+												<tr>
+													<td>1 час занятия с тренером</td>
+													<td>1000 р</td>
+													<td>1000 р</td>
+												</tr>
+											</tbody>
+										</table>
+										<p>*В цену занятия с тренером не входит стоимость катания и проката.</p>
+									</div>
+								</div>
+								<div class="tab-pane" id="tab2">
+									<div class="b-price-table">
+										<table>
+											<thead>
+												<tr>
+													<td><i class="b-time-ico"></i>продолжительность</td>
+													<td>будни</td>
+													<td>выходные</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1 минута <span>(Прокат оплачивается отдельно)</span></td>
+													<td>50 р</td>
+													<td>70 р</td>
+												</tr>
+												<tr>
+													<td>1 минута с тренером <span>(Прокат включен)</span></td>
+													<td>100 р</td>
+													<td>100 р</td>
+												</tr>												
+											</tbody>
+										</table>
+									</div>									
+								</div>
+								<div class="tab-pane" id="tab3">
+									<div class="b-price-table">
+										<table>
+											<thead>
+												<tr>
+													<td><i class="b-inv-ico"></i>инвентарь</td>
+													<td>будни</td>
+													<td>выходные</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>доска</td>
+													<td>200 р</td>
+													<td>300 р</td>
+												</tr>
+												<tr>
+													<td>гидрокостюм</td>
+													<td>100 р</td>
+													<td>200 р</td>
+												</tr>
+												<tr>
+													<td>Шлем + жилет</td>
+													<td>бесплатно</td>
+													<td>бесплатно</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="b-skating" id="skating">
+		<div class="b-skating-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl">
+						<div class="b-skating-container">
+							<div class="b-skating-top">
+								<h2>абонементы на <span>катание</span></h2>
+							</div>
+							<div class="b-skating-content">
+								<div class="b-skating-col">
+									<div class="b-skating-item" style="background: url(images/skating-bg.jpg) no-repeat;">
+										<div class="b-skating-item__top">
+											<span>абонемент</span>
+											<b>утро</b>
+										</div>
+										<div class="b-skating-item__text">
+											<span>будни</span>
+											<p>(7.30 -10.00)</p>
+											<span>выходные</span>
+											<p>(8.00 -10.00)</p>
+										</div>
+										<div class="b-skating-item__price">
+											<b>10 000 руб</b>
+											<span>(30 дней)</span>
+										</div>
+										<div class="b-skating-btn">
+											<button class="skating-btn" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+										</div>
+									</div>
+								</div>
+								<div class="b-skating-col">
+									<div class="b-skating-item b-skating-item__2" style="background: url(images/skating-bg2.jpg) no-repeat;">
+										<div class="b-skating-item__top">
+											<span>абонемент</span>
+											<b>месяц</b>
+										</div>
+										<div class="b-skating-item__text">
+											<span>будни</span>
+											<p>(7.30 -20.00)</p>
+											<span>выходные</span>
+											<p>(8.00 -20.00)</p>
+										</div>
+										<div class="b-skating-item__price">
+											<b>20 000 руб</b>
+											<span>(30 дней)</span>
+										</div>
+										<div class="b-skating-btn">
+											<button class="skating-btn" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+										</div>
+									</div>
+								</div>
+								<div class="b-skating-col">
+									<div class="b-skating-item b-skating-item__3" style="background: url(images/skating-bg3.jpg) no-repeat;">
+										<div class="b-skating-item__top">
+											<span>абонемент</span>
+											<b>сезон</b>
+										</div>
+										<div class="b-skating-item__text">
+											<span>будни</span>
+											<p>(7.30 -20.00)</p>
+											<span>выходные</span>
+											<p>(8.00 -20.00)</p>
+										</div>
+										<div class="b-skating-item__price">
+											<b>50 000 руб</b>
+											<span>(до сентября)</span>
+										</div>
+										<div class="b-skating-btn">
+											<button class="skating-btn" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+										</div>
+									</div>
+								</div>														
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="b-storage">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-skating-container b-skating-container2">
+						<div class="b-storage-top">
+							<h2>Абонементы на <span>хранение</span></h2>
+						</div>
+						<div class="b-skating-content">
+							<div class="b-storage-col">
+								<div class="b-storage-item">
+									<div class="b-storage-item__left">
+										<span>доска</span>
+										<b>1000 руб/мес</b>
+										<button class="skating-btn" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+									</div>
+									<div class="b-storage-item__img">
+										<img src="images/b-storage-item__img.png" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="b-storage-col">
+								<div class="b-storage-item b-storage-item__2">
+									<div class="b-storage-item__left">
+										<span>гидрокостюм</span>
+										<b>500 руб/мес</b>
+										<button class="skating-btn" data-toggle="modal" data-target="#modal-callback">оставить заявку</button>
+									</div>
+									<div class="b-storage-item__img">
+										<img src="images/b-storage-item__img2.png" alt="">
+									</div>
+								</div>
+							</div>						
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="b-school" id="school">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-school-top">
+						<h2>десткая школа</h2>
+						<p>В Do a flip wake pake постоянно <span>ведется набор в детскую школу вейкбординга</span>. Действует несколько групп. Под руководством опытных тренеров, детишки осваивают новый вид спорта и прогрессирует в нем.</p>
+					</div>
+					<div class="b-school-desc">
+						<ul>
+							<li>возраст<span>7 - 17 лет </span></li>
+							<li>3 раза в неделю<span>пн. ср. пт.</span></li>
+							<li>стоимость<span>6 000 руб/мес</span></li>
+						</ul>
+						<button class="b-school-btn btn-red" data-toggle="modal" data-target="#modal-callback">записаться в школу</button>
+					</div>
+				</div>
+			</div>
+			<div class="b-school-foto">
+				<div class="b-school-foto__col">
+					<div class="b-school-foto-item">
+						<a href="">
+							<img src="images/foto.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<div class="b-school-foto__col">
+					<div class="b-school-foto-item">
+						<a href="">
+							<img src="images/foto2.jpg" alt="">
+						</a>
+					</div>
+					<div class="b-school-foto-item">
+						<a href="">
+							<img src="images/foto3.jpg" alt="">
+						</a>
+					</div>						
+				</div>
+				<div class="b-school-foto__col">
+					<div class="b-school-foto-item">
+						<a href="">
+							<img src="images/foto4.jpg" alt="">
+						</a>
+					</div>
+				</div>										
+			</div>	
+		</div>
+	</section>
+
+	<section class="b-services" id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-services-top">
+						<h2>Услуги и мероприятия</h2>
+					</div>
+					<div class="b-services-content">
+						<div class="b-services-col">
+							<div class="b-services-item">
+								<img src="images/b-services-img.jpg" alt="">
+								<div class="b-services-item__wrap">
+									<div class="b-services-item__content">
+										<div class="b-services-item__top">
+											<span>услуга</span>
+											<b>Аренда лебедки</b>
+											<div class="b-services-item__text">
+												<p>Вы можете арендовать реверсивную или кольцевую лебедки, а также веранду парка на любое время. А профессиональные инструкторы помогут Вам освоить новый вид спорта. Есть возможность организовать стол. Стоимость обсуждается персонально в зависимости от дня недели, времени и количества человек.</p>
+											</div>											
+										</div>
+										<button class="b-services-item__btn">подробнее</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="b-services-col">
+							<div class="b-services-item b-services-item__2">
+								<img src="images/b-services-img2.jpg" alt="">
+								<div class="b-services-item__wrap">
+									<div class="b-services-item__content">
+										<div class="b-services-item__top">
+											<span>услуга</span>
+											<b>корпоративные праздники</b>
+											<div class="b-services-item__text">
+												<p>Возможно проведение корпоративных мероприятий с тренировками. Корпоративы – это отличная возможность коллегам лучше узнать друг друга для дальнейшей работы, хорошо провести время, освоить вейкбординг. Стоимость обсуждается персонально в зависимости от дня недели, времени и количества человек.</p>
+											</div>											
+										</div>
+										<button class="b-services-item__btn">подробнее</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="b-services-col">
+							<div class="b-services-item b-services-item__3">
+								<img src="images/b-services-img3.jpg" alt="">
+								<div class="b-services-item__wrap">
+									<div class="b-services-item__content">
+										<div class="b-services-item__top">
+											<span>услуга</span>
+											<b>день рождения</b>
+											<div class="b-services-item__text">
+												<p>На станции взрослые и дети могут весело и с пользой проводить дни рождения и другие праздники. Ваши гости совершенно точно запомнят праздник надолго! Есть возможность организовать стол. Стоимость обсуждается персонально в зависимости от дня недели, времени и количества человек.</p>
+											</div>											
+										</div>
+										<button class="b-services-item__btn">подробнее</button>
+									</div>
+								</div>
+							</div>
+						</div>												
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="b-faq" id="faq">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl">
+					<div class="b-services-container">
+						<div class="b-services-top">
+							<h2>вопрос/ответ</h2>
+						</div>
+						<div class="b-faq-content" id="faq-accordion">
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc1">
+									<span>1.Что такое вейкбординг?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc1" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Экстремальный вид спорта, сочетающий в себе элементы воднолыжного слалома, акробатику и прыжки. Вейкбординг имеет сходство со сноубордом, скейтбордом и серфингом.
+										В вейкбординге выделяют две дисциплины: вейкборд-катер и вейкборд-электротяга (кабельный вейкбординг).
+										В катерном вейкбординге спортсмен едет за катером, держась за фал, и выполняет различные трюки с помощью бегущей волны и трамплинов.
+										В кабельном вейкбординге движение спортсмена по воде происходит с помощью механизированной канатно-буксировочной установки, заменяющей катер. Существуют кольцевые установки, где движение происходит по кругу (вейк-парки), и реверсивные установки, где движение спортсмена возможно только вперёд и назад.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc2">
+									<span>2. Хочу попробовать в первый раз, как это сделать?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc2" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Парк работает каждый день с 10:00 до 21:00 (весной и ближе к осени время работы меняется, в связи с сокращением светового дня). Так что вам просто нужно прийти в любое удобное для вас время, прихватив с собой паспорт (для заполнения анкеты райдера), купальник/плавки/шорты, полотенце и шлепки (по желанию).</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc3">
+									<span>3. Какие ограничения по возрасту?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc3" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Начальный порог занятий - 7 лет. Но все индивидуально: ребенок и в 5 может начать показывать результаты. Главное, чтобы юный спортсмен умел плавать и не боялся воды. Верхнего возрастного порога не наблюдается.</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc4">
+									<span>4. Сколько стоит обучение и как это происходит?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc4" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Стоимость обучения 1000 рублей за 10 минут, соответственно. В эту цену входит 
+										прокат оборудования и инструктаж. Обучение проходит на реверсивной лебедке. На первом занятии Вы научитесь уверенно вставать из воды и ездить без остановки. Дальше - больше:)
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc5">
+									<span>5. 1000 ЗА 10 МИНУТ?!</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc5" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>10 минут для первого раза достаточно!)) За это время Вы уже встанете на доску, попробуете развернуться, а так же устанете, потому что 10 минут вейкбординга (особенно для новичка) можно приравнять к полноценной тренировке в тренажерном зале.</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc6">
+									<span>6. Так, хорошо, вот я научился. Сколько занятий на реверсе нужно, чтобы кататься на кольцевой лебедке?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc6" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>В среднем 3-4 занятия. Далее показатели сугубо индивидуальны.</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc7">
+									<span>7. Чем отличается реверсивная лебедка от кольцевой?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc7" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Реверсивная лебедка катает вперед-назад, на ней оператор может регулировать скорость, 
+										а при обучении идет индивидуальная работа с тренером. Кольцевая лебедка двигается без 
+										остановки с постоянной скоростью. Подходит для опытных райдеров.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc8">
+									<span>8. Я катаюсь на сноуборде/на вейке за катером. Можно сразу на кольцо?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc8" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Если вы уверенно катаетесь на других досках, то можно сразу на кольцо. НО, как показывает практика, вейкбординг отличается техникой и наличием тяги, поэтому есть смысл попробовать свои силы сначала на реверсивной лебедке.
+										Если вы уверенно катаетесь за катером - без проблем, можете пробовать кольцо)
+										В случае, если вы никогда не стояли на вейкборде, необходимо взять обучающий сет на 
+										реверсивной лебедке, так как катание на кольце может быть опасно как для вас, так и 
+										для оборудования парка. Плюс так вы получите больше удовольствия.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="b-faq-item">
+								<div class="b-faq-item__top collapsed" data-toggle="collapse" data-target="#acc8">
+									<span>9. А чему еще вы можете меня научить?</span>
+								</div>
+								<div class="b-faq-item__wrap collapse" id="acc8" data-parent="#faq-accordion">
+									<div class="b-faq-item__text">
+										<p>Если вы уже умеете уверенно ездить на доске и хотели бы прогрессировать дальше, то мы 
+										можем научить делать несложные базовые трюки, такие как Ralley или Backroll.
+
+										Если вы умеете делать базовые трюки и хотите еще, не вопрос – в этом случае нам тоже есть чему научить вас. Мы научим делать Frontflip, S-bend с приземлением в Blind, а также
+										трюки из Toeside, мобы, грэбы, джиббинг и многое другое. Под руководством опытных 
+										тренеров – это не сложно и не больно. Приходите!
+										</p>
+									</div>
+								</div>
+							</div>							
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="b-bottom">
+		<div class="b-map-wrapper">
+			<div id="map"></div>	
+		</div>	
+		<div class="b-form">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl">
+						<div class="b-form-content">
+							<div class="b-form-left">
+								<div class="b-form-top">
+									<b>Оставьте заявку</b>
+									<p>Заполните простую форму заявки и наш менеджер<br/>
+									свяжется с вамии в течение 15 минут.</p>
+								</div>
+								<div class="b-form-wrap">
+									<form action="">
+										<input class="b-form-input" type="text" placeholder="Как к вам обращаться?">
+										<input class="b-form-input b-input-tel" type="text" placeholder="Контактный телефон">
+										<div class="b-form-wrap__block">
+											<input class="b-form-btn btn-red" type="submit" value="отправить">
+											<div class="b-checkbox">
+												<input type="checkbox" checked id="n1" name="n4" />
+												<label for="n1"><span></span><i>Нажимая на кнопку вы<br/> соглашаетесь с <a target="_blank" href="https://docs.google.com/document/d/1Tk1Thipu3z5RqG5_32_E7xqa_3921Pa1TjlYQsYumtU/edit?usp=sharing">политикой<br/> кофиденциальности</a></i></label>  
+											</div>
+										</div>
+
+									</form>
+								</div>
+							</div>
+							<div class="b-form-img">
+								<img src="images/b-form-man.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="b-contacts" id="contacts">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl">
+						<div class="b-contacts-left">
+							<div class="b-contacts-top">
+								<h2>схема <br/>проезда</h2>
+								<p>Если у вас возникли вопросы,<br/> как добраться, позвоните по телефону</p>
+							</div>
+							<div class="b-contacts-bottom">
+								<a class="b-contats-phone" href="tel:8 985 488 89 69">8 985 488 89 69</a>
+								<a class="btn-callback btn-trans" href="" >Открыть в google map</a>
+							</div>
+							<a target="_blank" href="https://artrepin.studio/" class="b-create">
+								<div class="b-create-img">
+									<img src="images/Logogrey2.svg" alt="">
+								</div>
+								<p>Создано с любовью <br/>
+								в студии «Картина Репина»</p>
+							</a>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- begin b-footer -->
+		<footer class="b-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl">
+						<div class="b-nav">
+							<ul>
+								<li><a href="#training">Обучение</a></li>
+								<li><a href="#price">Цены</a></li>
+								<li><a href="#skating">Абонементы</a></li>
+								<li><a href="#school">Детская школа</a></li>
+								<li><a href="#services">Услуги</a></li>
+								<li><a href="#faq">FAQ</a></li>
+								<li><a href="#contacts">Схема проезда</a></li>
+							</ul>
+						</div>
+						<div class="b-social">
+							<ul>
+								<li><a target="_blank" href="https://vk.com/doaflipwakepark"><img src="images/vk.svg" alt=""></a></li>
+								<li><a target="_blank" href="https://www.facebook.com/doaflipwakepark/"><img src="images/facebook-logo.svg" alt=""></a></li>
+								<li><a target="_blank" href="https://www.instagram.com/doaflip_wakepark/"><img src="images/inst.svg" alt=""></a></li>
+								<!-- <li><a href=""><img src="images/yt.svg" alt=""></a></li> -->
+							</ul>
+						</div>
+						<div class="b-copyright">
+							<a target="_blank" href="https://docs.google.com/document/d/1Tk1Thipu3z5RqG5_32_E7xqa_3921Pa1TjlYQsYumtU/edit?usp=sharing">Политика конфиденциальности</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end b-footer -->
+	</div>
+
+</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv9-H5GwlZA4EkUorU0gGHrq0H4pFMPS4"></script>
+	<script src="js/jquery.malihu.PageScroll2id.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+	<script src="js/jquery.inputmask.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
